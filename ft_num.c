@@ -25,7 +25,7 @@ static size_t	ft_strlen(char *str)
 int	ft_putnbr(long long number, char *base, int is_unsigned)
 {
 	int		res;
-	int		rad;
+	size_t	rad;
 	size_t	num;
 
 	res = 0;
