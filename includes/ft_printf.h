@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: osancak <osancak@student.42istanbul.com.tr +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/15 16:27:30 by osancak           #+#    #+#             */
+/*   Updated: 2025/06/16 00:11:22 by osancak          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdarg.h>
+# include <unistd.h>
+
+# define DECIMAL "0123456789"
+# define HEXA_UP "0123456789ABCDEF"
+# define HEXA_DOWN "0123456789abcdef"
+
+int	ft_printf(const char *format, ...);
+int	ft_putchr(char c);
+int	ft_putstr(char *str);
+int	ft_putnbr(long long n, char *base, int is_unsigned);
+int	ft_pointer(size_t pointer);
+
+#endif
