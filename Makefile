@@ -2,15 +2,12 @@ CFILES = ft_printf.c \
 		ft_char.c \
 		ft_num.c
 
-SRCDIR = srcs
-INCDIR = includes
 OBJDIR = obj
-
 OFILES = $(addprefix $(OBJDIR)/, $(CFILES:.c=.o))
 
 NAME   = libftprintf.a
 CC     = cc
-CFLAGS = -Wall -Wextra -Werror -I$(INCDIR)
+CFLAGS = -Wall -Wextra -Werror
 
 GREEN   = \033[0;32m
 YELLOW  = \033[0;33m
@@ -26,9 +23,9 @@ $(NAME): $(OFILES)
 	@printf "$(GREEN)» 📦 Creating  $(RESET)» $(MAGENTA)$(NAME)$(RESET)\n"
 	@ar -rcs $(NAME) $(OFILES)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
+$(OBJDIR)/%.o: %.c
 	@mkdir -p $(OBJDIR)
-	@printf "$(BLUE)» ⚙️  Compiling $(RESET)» $(YELLOW)%24s$(RESET) | $(GREEN)%s$(RESET)\n" "$<" "$@"
+	@printf "$(BLUE)» ⚙️  Compiling $(RESET)» $(YELLOW)%11s$(RESET) | $(GREEN)%s$(RESET)\n" "$<" "$@"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
