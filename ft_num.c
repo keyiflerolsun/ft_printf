@@ -46,18 +46,3 @@ int	ft_putnbr(long long number, char *base, int is_unsigned)
 		res += ft_putchr(base[num]);
 	return (res);
 }
-
-int	ft_pointer(size_t pointer)
-{
-	int	res;
-
-	res = 0;
-	if (!pointer)
-		res += ft_putstr("(nil)");
-	else
-	{
-		res += ft_putstr("0x");
-		res += ft_putnbr(pointer, HEXA_DOWN, 1);
-	}
-	return (res);
-}

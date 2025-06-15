@@ -6,7 +6,7 @@
 /*   By: osancak <osancak@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/15 16:25:11 by osancak           #+#    #+#             */
-/*   Updated: 2025/06/16 00:11:27 by osancak          ###   ########.fr       */
+/*   Updated: 2025/06/16 02:13:44 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	ft_flag(char c, va_list ap)
 {
-	int	steps;
+	int		steps;
+	size_t	ptr;
 
 	steps = 0;
 	if (c == 'c')
@@ -30,7 +31,13 @@ static int	ft_flag(char c, va_list ap)
 	else if (c == 'X')
 		steps += ft_putnbr(va_arg(ap, unsigned int), HEXA_UP, 1);
 	else if (c == 'p')
-		steps += ft_pointer(va_arg(ap, size_t));
+	{
+		ptr = va_arg(ap, size_t);
+		if (!ptr)
+			steps += ft_putstr("(nil)");
+		else
+			steps += ft_putstr("0x") + ft_putnbr(ptr, HEXA_DOWN, 1);
+	}
 	return (steps);
 }
 
