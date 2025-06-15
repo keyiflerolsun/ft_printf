@@ -8,14 +8,6 @@ Bu proje, C dilinde standart `printf` fonksiyonunun temel işlevlerini taklit ed
 - Hatalı veya eksik formatlarda güvenli davranış.
 - Kendi başına çalışan bir kütüphane olarak kullanılabilir.
 
-## Dosya Yapısı
-
-- `srcs/` — Kaynak dosyalar (`ft_printf.c`, `ft_char.c`, `ft_num.c`)
-- `includes/` — Başlık dosyası (`ft_printf.h`)
-- `obj/` — Derlenmiş nesne dosyaları
-- `libftprintf.a` — Oluşan statik kütüphane
-- `Makefile` — Derleme talimatları
-
 ## Kurulum
 
 Projeyi derlemek için terminalde aşağıdaki komutu çalıştırın:
@@ -30,7 +22,7 @@ Başarılı derlemeden sonra `libftprintf.a` dosyası oluşacaktır.
 
 Kendi projenize eklemek için:
 
-1. `includes/ft_printf.h` dosyasını projenize dahil edin.
+1. `ft_printf.h` dosyasını projenize dahil edin.
 2. Derlerken `libftprintf.a` kütüphanesini ekleyin.
 
 Örnek kullanım:
