@@ -12,27 +12,27 @@
 
 #include "ft_printf.h"
 
-static int	ft_flag(char c, va_list ap)
+static int	ft_flag(char c, va_list arg_p)
 {
 	int		steps;
 	size_t	ptr;
 
 	steps = 0;
 	if (c == 'c')
-		steps += ft_putchr(va_arg(ap, int));
+		steps += ft_putchr(va_arg(arg_p, int));
 	else if (c == 's')
-		steps += ft_putstr(va_arg(ap, char *));
+		steps += ft_putstr(va_arg(arg_p, char *));
 	else if (c == 'd' || c == 'i')
-		steps += ft_putnbr(va_arg(ap, int), DECIMAL, 0);
+		steps += ft_putnbr(va_arg(arg_p, int), DECIMAL, 0);
 	else if (c == 'u')
-		steps += ft_putnbr(va_arg(ap, unsigned int), DECIMAL, 1);
+		steps += ft_putnbr(va_arg(arg_p, unsigned int), DECIMAL, 1);
 	else if (c == 'x')
-		steps += ft_putnbr(va_arg(ap, unsigned int), HEXA_DOWN, 1);
+		steps += ft_putnbr(va_arg(arg_p, unsigned int), HEXA_DOWN, 1);
 	else if (c == 'X')
-		steps += ft_putnbr(va_arg(ap, unsigned int), HEXA_UP, 1);
+		steps += ft_putnbr(va_arg(arg_p, unsigned int), HEXA_UP, 1);
 	else if (c == 'p')
 	{
-		ptr = va_arg(ap, size_t);
+		ptr = va_arg(arg_p, size_t);
 		if (!ptr)
 			steps += ft_putstr("(nil)");
 		else
@@ -43,11 +43,11 @@ static int	ft_flag(char c, va_list ap)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	ap;
+	va_list	arg_p;
 	int		steps;
 
 	steps = 0;
-	va_start(ap, format);
+	va_start(arg_p, format);
 	while (*format)
 	{
 		if (*format != '%')
@@ -57,9 +57,9 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			format++;
-			steps += ft_flag(*format++, ap);
+			steps += ft_flag(*format++, arg_p);
 		}
 	}
-	va_end(ap);
+	va_end(arg_p);
 	return (steps);
 }

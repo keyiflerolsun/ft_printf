@@ -22,7 +22,7 @@ static size_t	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_putnbr(long long number, char *base, int is_unsigned)
+int	ft_putnbr(long long nbr, char *base, int is_unsigned)
 {
 	int					res;
 	unsigned long long	rad;
@@ -30,13 +30,13 @@ int	ft_putnbr(long long number, char *base, int is_unsigned)
 
 	res = 0;
 	rad = ft_strlen(base);
-	if (!is_unsigned && number < 0)
+	if (!is_unsigned && nbr < 0)
 	{
 		res += ft_putchr('-');
-		num = -number;
+		num = -nbr;
 	}
 	else
-		num = (unsigned long long)number;
+		num = (unsigned long long)nbr;
 	if (num >= rad)
 	{
 		res += ft_putnbr(num / rad, base, is_unsigned);
