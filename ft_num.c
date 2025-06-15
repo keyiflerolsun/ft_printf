@@ -24,21 +24,19 @@ static size_t	ft_strlen(char *str)
 
 int	ft_putnbr(long long number, char *base, int is_unsigned)
 {
-	int		res;
-	size_t	rad;
-	size_t	num;
+	int					res;
+	unsigned long long	rad;
+	unsigned long long	num;
 
 	res = 0;
 	rad = ft_strlen(base);
-	if (is_unsigned)
-		num = (size_t)number;
-	else
-		num = (unsigned long long)number;
 	if (!is_unsigned && number < 0)
 	{
 		res += ft_putchr('-');
-		num = -num;
+		num = -number;
 	}
+	else
+		num = (unsigned long long)number;
 	if (num >= rad)
 	{
 		res += ft_putnbr(num / rad, base, is_unsigned);
