@@ -29,7 +29,7 @@ static int	ft_flag(char c, va_list ap)
 		steps += ft_putnbr(va_arg(ap, unsigned int), HEXA_DOWN, 1);
 	else if (c == 'X')
 		steps += ft_putnbr(va_arg(ap, unsigned int), HEXA_UP, 1);
-	if (c == 'p')
+	else if (c == 'p')
 		steps += ft_pointer(va_arg(ap, size_t));
 	return (steps);
 }

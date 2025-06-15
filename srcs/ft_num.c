@@ -27,15 +27,15 @@ int	ft_putnbr(long long number, char *base, int is_unsigned)
 	size_t	num;
 	int		res;
 
+	res = 0;
 	if (!is_unsigned)
 		num = (unsigned long long)number;
 	else
 		num = (size_t)number;
-	res = 0;
 	if (!is_unsigned && number < 0)
 	{
 		res += ft_putchr('-');
-		num = -(unsigned long long)number;
+		num = -num;
 	}
 	if (num >= ft_strlen(base))
 	{
@@ -52,12 +52,12 @@ int	ft_pointer(size_t pointer)
 	int	res;
 
 	res = 0;
-	if (pointer)
+	if (!pointer)
+		res += ft_putstr("(nil)");
+	else
 	{
 		res += ft_putstr("0x");
 		res += ft_putnbr(pointer, HEXA_DOWN, 1);
 	}
-	else
-		res += ft_putstr("(nil)");
 	return (res);
 }
