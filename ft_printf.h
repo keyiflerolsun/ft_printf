@@ -23,6 +23,6 @@
 int	ft_printf(const char *format, ...);
 int	ft_putchr(char c);
 int	ft_putstr(char *str);
-int	ft_putnbr(long long n, char *base, int is_unsigned);
+int	ft_putnbr(long long number, char *base, int is_unsigned);
 
 #endif
