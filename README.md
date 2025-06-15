@@ -1,6 +1,6 @@
 # ft_printf
 
-Bu proje, C dilinde standart `printf` fonksiyonunun temel işlevlerini taklit eden bir kütüphanedir. Proje, 42 okulu kapsamında geliştirilmiştir.
+Bu proje, C dilinde standart `printf` fonksiyonunun temel işlevlerini taklit eden bir kütüphanedir. Proje, *École 42* kapsamında geliştirilmiştir.
 
 ## Özellikler
 
