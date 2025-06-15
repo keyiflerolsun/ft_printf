@@ -28,10 +28,10 @@ int	ft_putnbr(long long number, char *base, int is_unsigned)
 	int		res;
 
 	res = 0;
-	if (!is_unsigned)
-		num = (unsigned long long)number;
-	else
+	if (is_unsigned)
 		num = (size_t)number;
+	else
+		num = (unsigned long long)number;
 	if (!is_unsigned && number < 0)
 	{
 		res += ft_putchr('-');
