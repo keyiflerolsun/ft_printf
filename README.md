@@ -38,10 +38,10 @@ Kendi projenize eklemek için:
 ```c
 #include "ft_printf.h"
 
-int main(void)
+int    main(void)
 {
-    ft_printf("Merhaba %s! Sayı: %d\n", "Dünya", 42);
-    return 0;
+    ft_printf("Hey, this is %s %d!\n", "École", 42);
+    return (0);
 }
 ```
 
