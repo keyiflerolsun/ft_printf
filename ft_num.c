@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static size_t	ft_strlen(char *str)
+static unsigned long long	ft_strlen(char *str)
 {
-	size_t	i;
+	unsigned long long	i;
 
 	i = 0;
 	while (str[i])
