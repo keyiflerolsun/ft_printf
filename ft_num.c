@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static unsigned long long	ft_strlen(char *str)
+static size_t	ft_strlen(char *str)
 {
-	unsigned long long	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -25,7 +25,7 @@ static unsigned long long	ft_strlen(char *str)
 int	ft_putnbr(long long nbr, char *base, int is_unsigned)
 {
 	int					res;
-	unsigned long long	rad;
+	size_t				rad;
 	unsigned long long	num;
 
 	res = 0;
