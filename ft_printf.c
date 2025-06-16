@@ -52,8 +52,8 @@ int	ft_printf(const char *format, ...)
 	{
 		if (*format != '%')
 			steps += ft_putchr(*format++);
-		else if (*(format + 1) == '%' && format++ && format++)
-			steps += ft_putchr('%');
+		else if (*(format + 1) == '%' && format++)
+			steps += ft_putchr(*format++);
 		else
 		{
 			format++;
