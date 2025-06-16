@@ -54,11 +54,8 @@ int	ft_printf(const char *format, ...)
 			steps += ft_putchr(*format++);
 		else if (*(format + 1) == '%' && format++)
 			steps += ft_putchr(*format++);
-		else
-		{
-			format++;
+		else if (format++)
 			steps += ft_flag(*format++, arg_p);
-		}
 	}
 	va_end(arg_p);
 	return (steps);
